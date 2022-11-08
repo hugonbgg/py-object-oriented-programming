@@ -48,7 +48,8 @@ print(nome)
 musician = formatted_name('jimi', 'hendrix')
 print(musician)
 
-#Deixando um argumento opcional - nome do meio
+
+# Deixando um argumento opcional - nome do meio
 
 
 def formatted_name(first_name, last_name, middle_name=''):
@@ -63,6 +64,47 @@ def formatted_name(first_name, last_name, middle_name=''):
 nome_simples = formatted_name('jimi', 'hendrix')
 nome_composto = formatted_name('john', 'hooker', 'lee')
 
-
 print(nome_simples)
 print(nome_composto)
+
+
+# Devolvendo um dicionário
+def build_person(first_name, last_name, age=''):
+    person = {'first': first_name, 'last': last_name}
+    if age:
+        person['age'] = age
+    return person
+
+
+pessoa_dict = build_person('Hugo', 'Gusmão')
+print(pessoa_dict)
+
+pessoa_dict = build_person('Hugo', 'Gusmão', 36)
+print(pessoa_dict)
+
+
+# Usando uma função com um laço while
+# Salvando várias pessoas
+
+def get_formatted_name(first_name, last_name):
+    full_name = f'{first_name} {last_name}'
+    return full_name
+
+
+# Este é um loop infinito
+while True:
+    print('\nPlease tell me your name:')
+    print("\nPress 'q' at any time to quit")
+    f_name = input('First name: ')
+    if f_name == 'q':
+        print("'q' key pressed! Exiting...")
+        break
+    l_name = input('Last name: ')
+    if l_name == 'q':
+        print("'q' key pressed! Exiting...")
+        break
+
+    formatted_name = get_formatted_name(f_name, l_name)
+    print(f'\nHello, {formatted_name}!')
+
+
