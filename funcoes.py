@@ -108,3 +108,26 @@ while True:
     print(f'\nHello, {formatted_name.title()}!')
 
 
+# Passando uma lista para uma função
+def greet_users(names):
+    for name in names:
+        print(f'Hello {name.title()}!')
+
+
+users = ['Hugo', 'Ana', 'Maria', 'Carla']
+
+greet_users(users)
+
+
+# Modificando uma lista em uma função
+# %%
+
+def greet_users(names):
+    for name in names:
+        print(f'Hello {name.title()}!')
+
+
+users = ['Hugo', 'Ana', 'Maria', 'Carla']
+
+greet_users(users)
+# %%
