@@ -37,7 +37,7 @@ class Restaurant():
             self.number_served += incrimento
 
 
-restaurante = Restaurant('Halim', 'Árabe')
+'''restaurante = Restaurant('Halim', 'Árabe')
 restaurante.describe_restaurant()
 restaurante.number_served = 23
 
@@ -51,7 +51,7 @@ restaurante.increment_number_served(100)
 restaurante.read_number_served()
 
 restaurante.increment_number_served(100)
-restaurante.read_number_served()
+restaurante.read_number_served()'''
 
 """9.5 – Tentativas de login: Acrescente um atributo chamado login_attempts à sua classe User do Exercício 9.3 (
 página 226). Escreva um método chamado increment_login_attempts() que incremente o valor de login_attempts em 1. 
@@ -59,3 +59,37 @@ Escreva outro método chamado reset_login_attempts() que reinicie o valor de log
 da classe User e chame increment_login_attempts() várias vezes. Exiba o valor de login_attempts para garantir que ele 
 foi incrementado de forma apropriada e, em seguida, chame reset_login_attempts(). Exiba login_attempts novamente para 
 garantir que seu valor foi reiniciado com 0. """
+
+
+class User():
+    def __init__(self, first_name, last_name, user_name, departament):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.user_name = user_name
+        self.departament = departament
+        self.login_attempts = 0
+
+    def describe_user(self):
+        print(f'{self.first_name} {self.last_name}, seu nome de usuário é {self.user_name} e seu departa'
+              f'mento é {self.departament}. Atualmente foram feitas {self.login_attempts} tentativas de login.')
+
+    def greet_user(self):
+        print(f'Bem-vindo {self.user_name}!')
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+        print("Tentivas de login resetadas!")
+
+
+usuario = User('Hugo', 'Gusmão', 'hugonbgg', 'Data Engineer')
+
+usuario.describe_user()
+while usuario.login_attempts < 10:
+    usuario.increment_login_attempts()
+usuario.describe_user()
+usuario.reset_login_attempts()
+usuario.describe_user()
+
